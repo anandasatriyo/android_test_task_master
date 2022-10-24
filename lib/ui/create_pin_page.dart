@@ -191,11 +191,16 @@ class _NumPad extends StatelessWidget {
                             .add(const CreatePINAddEvent(pinNum: 0)))),
                 const SizedBox(width: 64),
                 Expanded(
-                    child: IconButton(
-                  icon: const Icon(Icons.backspace),
-                  onPressed: () => BlocProvider.of<CreatePINBloc>(context)
-                      .add(const CreatePINEraseEvent()),
-                )),
+                  child: FittedBox(
+                    child: FloatingActionButton(
+                      heroTag: num,
+                      elevation: 2,
+                      backgroundColor: const Color(0xFFf5f5f8),
+                      onPressed: () => print('object'),
+                      child: const Icon((Icons.backspace), color: Colors.black),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
